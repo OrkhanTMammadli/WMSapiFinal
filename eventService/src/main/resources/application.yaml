@@ -4,7 +4,8 @@ spring:
   application:
     name: eventService
   datasource:
-    url: jdbc:postgresql://localhost:5432/event_db
+#    url: jdbc:postgresql://postgreswms_db:5432/event_db
+    url: jdbc:postgresql://localhost/event_db
     username: postgres
     password: "orkhan2025"
     driver-class-name: org.postgresql.Driver
@@ -18,6 +19,7 @@ spring:
         format_sql: true
   data:
     redis:
+#      host: wedding-redis
       host: localhost
       port: 6379
       timeout: 5000

@@ -5,6 +5,7 @@ spring:
     gateway:
       routes:
         - id: event-service-route
+#          uri: http://eventservice:8081
           uri: http://localhost:8081
           predicates:
             - Path=/api/event/**
@@ -19,6 +20,7 @@ spring:
                 name: eventCircuitBreaker
                 fallbackUri: forward:/fallback/event
         - id: guest-service-route
+#          uri: http://guestservice:8082
           uri: http://localhost:8082
           predicates:
             - Path=/api/guest/**
@@ -33,6 +35,7 @@ spring:
                 name: eventCircuitBreaker
                 fallbackUri: forward:/fallback/guest
         - id: table-service-route
+#          uri: http://tableservice:8083
           uri: http://localhost:8083
           predicates:
             - Path=/api/table/**
@@ -48,6 +51,7 @@ spring:
                 fallbackUri: forward:/fallback/table
   data:
     redis:
+#      host: wedding-redis
       host: localhost
       port: 6379
       timeout: 5000

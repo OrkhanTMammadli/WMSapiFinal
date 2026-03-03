@@ -4,6 +4,7 @@ spring:
   application:
     name: tableService
   datasource:
+#    url: jdbc:postgresql://postgreswms_db:5432/table_db
     url: jdbc:postgresql://localhost:5432/table_db
     username: postgres
     password: "orkhan2025"
@@ -18,6 +19,7 @@ spring:
         format_sql: true
   data:
     redis:
+#      host: wedding-redis
       host: localhost
       port: 6379
       timeout: 5000

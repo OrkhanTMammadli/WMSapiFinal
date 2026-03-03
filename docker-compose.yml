@@ -8,33 +8,79 @@ services:
       - redis-data:/data
     command: redis-server --appendonly yes
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: [ "CMD", "redis-cli", "ping" ]
       interval: 5s
-      timeout: 3s
-      retries: 5
+      retries: 10
   postgres:
     image: postgres:13
     container_name: postgreswms_db
     environment:
-      POSTGRES_DB: wms_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: "orkhan2025"
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      retries: 10
     volumes:
       - postgres_data:/var/lib/postgresql/data
-  app:
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+  gateway:
     build: .
-    container_name: wmsystem-app
+    container_name: gateway
     depends_on:
-      redis:
-        condition: service_healthy
+      - eventservice
+      - guestservice
+      - tableservice
     ports:
       - "8080:8080"
     environment:
       SPRING_PROFILES_ACTIVE: docker
     restart: on-failure
+  eventservice:
+    build: ./eventService
+    container_name: eventService
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/event_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: orkhan2025
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+  guestservice:
+    build: ./guestService
+    container_name: guestService
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/guest_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: orkhan2025
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+  tableservice:
+    build: ./tableService
+    container_name: tableService
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/table_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: orkhan2025
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
 volumes:
   redis-data:
   postgres_data:

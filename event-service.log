@@ -1,157 +1,77 @@
-2026-02-27T01:12:29.821+04:00  INFO 16200 --- [eventService] [main] c.l.e.EventServiceApplication            : Starting EventServiceApplication using Java 17.0.18 with PID 16200 (C:\Users\orkha\OneDrive\Documents\WMSapi\eventService\build\classes\java\main started by orkha in C:\Users\orkha\OneDrive\Documents\WMSapi)
-2026-02-27T01:12:29.833+04:00  INFO 16200 --- [eventService] [main] c.l.e.EventServiceApplication            : No active profile set, falling back to 1 default profile: "default"
-2026-02-27T01:12:30.899+04:00  INFO 16200 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-02-27T01:12:30.902+04:00  INFO 16200 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-27T01:12:31.079+04:00  INFO 16200 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 167 ms. Found 1 JPA repository interface.
-2026-02-27T01:12:31.103+04:00  INFO 16200 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-02-27T01:12:31.106+04:00  INFO 16200 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-02-27T01:12:31.131+04:00  INFO 16200 --- [eventService] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ltc.eventservice.repository.EventRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2026-02-27T01:12:31.132+04:00  INFO 16200 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-2026-02-27T01:12:31.813+04:00  INFO 16200 --- [eventService] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-02-27T01:12:31.828+04:00  INFO 16200 --- [eventService] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-27T01:12:31.828+04:00  INFO 16200 --- [eventService] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2026-02-27T01:12:31.918+04:00  INFO 16200 --- [eventService] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-02-27T01:12:31.919+04:00  INFO 16200 --- [eventService] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2016 ms
-2026-02-27T01:12:32.373+04:00  INFO 16200 --- [eventService] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-02-27T01:12:32.474+04:00  INFO 16200 --- [eventService] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-02-27T01:12:32.531+04:00  INFO 16200 --- [eventService] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-02-27T01:12:32.838+04:00  INFO 16200 --- [eventService] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-27T01:12:32.882+04:00  INFO 16200 --- [eventService] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-27T01:12:33.081+04:00  INFO 16200 --- [eventService] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2792c28
-2026-02-27T01:12:33.083+04:00  INFO 16200 --- [eventService] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-27T01:12:33.157+04:00  WARN 16200 --- [eventService] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-02-27T01:12:34.395+04:00  INFO 16200 --- [eventService] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-27T01:12:34.542+04:00  INFO 16200 --- [eventService] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-27T01:12:35.041+04:00  WARN 16200 --- [eventService] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-27T01:12:35.151+04:00 DEBUG 16200 --- [eventService] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
-2026-02-27T01:12:35.259+04:00 DEBUG 16200 --- [eventService] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2026-02-27T01:12:35.299+04:00 DEBUG 16200 --- [eventService] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-02-27T01:12:35.334+04:00 DEBUG 16200 --- [eventService] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-02-27T01:12:35.636+04:00 DEBUG 16200 --- [eventService] [main] o.s.d.r.l.RedisMessageListenerContainer  : Starting RedisMessageListenerContainer...
-2026-02-27T01:12:35.637+04:00 DEBUG 16200 --- [eventService] [main] o.s.d.r.l.RedisMessageListenerContainer  : Postpone listening for Redis messages until actual listeners are added
-2026-02-27T01:12:35.734+04:00  INFO 16200 --- [eventService] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-02-27T01:12:35.751+04:00  INFO 16200 --- [eventService] [main] c.l.e.EventServiceApplication            : Started EventServiceApplication in 6.572 seconds (process running for 8.042)
-2026-02-27T01:13:46.831+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-27T01:13:46.832+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-27T01:13:46.832+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-02-27T01:13:46.833+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-02-27T01:13:46.833+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2026-02-27T01:13:46.834+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@36e9fd4f
-2026-02-27T01:13:46.835+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@170b27a7
-2026-02-27T01:13:46.836+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-02-27T01:13:46.836+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-02-27T01:13:46.860+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
-2026-02-27T01:13:46.888+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2026-02-27T01:13:46.975+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:13:46.987+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
-2026-02-27T01:13:46.990+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
-2026-02-27T01:13:47.017+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
-2026-02-27T01:13:47.019+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8081/swagger-ui/oauth2-re (truncated)...]
-2026-02-27T01:13:47.028+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:13:47.034+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
-2026-02-27T01:13:47.034+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
-2026-02-27T01:13:47.572+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 518 ms
-2026-02-27T01:13:47.603+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
-2026-02-27T01:13:47.603+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
-2026-02-27T01:13:47.608+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:14:03.815+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/event/allEvents", parameters={}
-2026-02-27T01:14:03.815+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#getAllEvents()
-2026-02-27T01:14:04.596+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-9] c.l.e.controller.EventController         : All Events: [EventResponseDTO(id=1, name=Akif&Narmin, venue=Baku, address=3-cu MKR, eventDate=2026-02-26T21:18:54.160, totalTables=15, totalGuests=150, createdAt=2026-02-24T21:18:54.160)]
-2026-02-27T01:14:04.603+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-02-27T01:14:04.603+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[EventResponseDTO(id=1, name=Akif&Narmin, venue=Baku, address=3-cu MKR, eventDate=2026-02-26T21:18:5 (truncated)...]
-2026-02-27T01:14:04.606+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:14:25.888+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : DELETE "/api/event/deleteEvent/1", parameters={}
-2026-02-27T01:14:25.889+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#deleteEvent(Long)
-2026-02-27T01:14:25.965+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-5] c.l.eventservice.service.Implementation  : Event Deleted: 1
-2026-02-27T01:14:28.831+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-5] c.l.e.controller.EventController         : Event Deleted: 1
-2026-02-27T01:14:28.832+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
-2026-02-27T01:14:28.832+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["The event deleted"]
-2026-02-27T01:14:28.833+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
-2026-02-27T01:15:36.746+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/event/addEvent", parameters={}
-2026-02-27T01:15:36.748+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#addEvent(EventRequestDTO)
-2026-02-27T01:15:36.781+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [EventRequestDTO(name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03- (truncated)...]
-2026-02-27T01:15:36.898+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-3] c.l.eventservice.service.Implementation  : Event Saved: Event(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03-01T21:14:36.630, totalTables=5, totalGuests=50, createdAt=2026-02-26T21:14:36.630)
-2026-02-27T01:15:38.919+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-3] c.l.e.controller.EventController         : Event Added: EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03-01T21:14:36.630, totalTables=5, totalGuests=50, createdAt=2026-02-26T21:14:36.630)
-2026-02-27T01:15:38.924+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-02-27T01:15:38.925+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2 (truncated)...]
-2026-02-27T01:15:38.928+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 202 ACCEPTED
-2026-02-27T01:16:32.977+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : PUT "/api/event/updateEvent/3", parameters={}
-2026-02-27T01:16:32.977+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#updateEvent(Long, EventRequestDTO)
-2026-02-27T01:16:32.979+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [EventRequestDTO(name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03- (truncated)...]
-2026-02-27T01:16:32.987+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.ltc.eventservice.exception.GlobalExceptionHandler#handleEventAlreadyExistsException(EventAlreadyExistsException)
-2026-02-27T01:16:32.989+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
-2026-02-27T01:16:32.989+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["This wedding record is already exists"]
-2026-02-27T01:16:32.990+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.ltc.eventservice.exception.EventAlreadyExistsException: This wedding record is already exists]
-2026-02-27T01:16:32.991+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-02-27T01:17:04.366+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/event/allEvents", parameters={}
-2026-02-27T01:17:04.373+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#getAllEvents()
-2026-02-27T01:17:04.386+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-10] c.l.e.controller.EventController         : All Events: [EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03-01T21:14:36.630, totalTables=5, totalGuests=50, createdAt=2026-02-26T21:14:36.630)]
-2026-02-27T01:17:04.387+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-02-27T01:17:04.387+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate= (truncated)...]
-2026-02-27T01:17:04.390+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:34:21.168+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
-2026-02-27T01:34:21.174+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2026-02-27T01:34:21.186+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:34:21.268+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
-2026-02-27T01:34:21.268+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
-2026-02-27T01:34:21.270+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
-2026-02-27T01:34:21.270+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8081/swagger-ui/oauth2-re (truncated)...]
-2026-02-27T01:34:21.271+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:34:21.280+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
-2026-02-27T01:34:21.281+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
-2026-02-27T01:34:21.284+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
-2026-02-27T01:34:21.284+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
-2026-02-27T01:34:21.286+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T01:34:26.947+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/event/allEvents", parameters={}
-2026-02-27T01:34:26.948+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#getAllEvents()
-2026-02-27T01:34:26.960+04:00  INFO 16200 --- [eventService] [http-nio-8081-exec-5] c.l.e.controller.EventController         : All Events: [EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03-01T21:14:36.630, totalTables=5, totalGuests=50, createdAt=2026-02-26T21:14:36.630)]
-2026-02-27T01:34:26.961+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-02-27T01:34:26.961+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate= (truncated)...]
-2026-02-27T01:34:26.961+04:00 DEBUG 16200 --- [eventService] [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-02-27T02:50:25.880+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-1] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/127.0.0.1:6379
-2026-02-27T02:50:25.973+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-2] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection closed prematurely
-
-io.lettuce.core.RedisConnectionException: Connection closed prematurely
-	at io.lettuce.core.protocol.RedisHandshakeHandler.channelInactive(RedisHandshakeHandler.java:91) ~[lettuce-core-6.3.2.RELEASE.jar:6.3.2.RELEASE/8941aea]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:69) ~[lettuce-core-6.3.2.RELEASE.jar:6.3.2.RELEASE/8941aea]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1405) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:901) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:813) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470) ~[netty-common-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566) ~[netty-transport-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.109.Final.jar:4.1.109.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.109.Final.jar:4.1.109.Final]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2026-02-27T02:50:30.940+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-4] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:50:30.943+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-5] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:50:43.338+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-3] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:50:43.344+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-7] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:50:59.747+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-5] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:50:59.751+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-8] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:51:29.837+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-7] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:51:29.841+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-1] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:51:59.946+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-1] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:51:59.948+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-2] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:52:30.039+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-3] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:52:30.043+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-3] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:53:00.137+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-5] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:53:00.139+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-4] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:53:30.237+04:00  INFO 16200 --- [eventService] [lettuce-eventExecutorLoop-1-7] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/<unresolved>:6379
-2026-02-27T02:53:30.241+04:00  WARN 16200 --- [eventService] [lettuce-nioEventLoop-4-5] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection refused: getsockopt: localhost/127.0.0.1:6379
-2026-02-27T02:53:38.779+04:00 DEBUG 16200 --- [eventService] [SpringApplicationShutdownHook] o.s.d.r.l.RedisMessageListenerContainer  : Stopped RedisMessageListenerContainer
-2026-02-27T02:53:38.795+04:00  INFO 16200 --- [eventService] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-02-27T02:53:38.808+04:00  INFO 16200 --- [eventService] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-02-27T02:53:38.816+04:00  INFO 16200 --- [eventService] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-03T13:48:21.021+04:00  INFO 9700 --- [eventService] [main] c.l.e.EventServiceApplication            : Starting EventServiceApplication using Java 17.0.18 with PID 9700 (C:\Users\orkha\OneDrive\Documents\WMSapi\eventService\build\classes\java\main started by orkha in C:\Users\orkha\OneDrive\Documents\WMSapi)
+2026-03-03T13:48:21.040+04:00  INFO 9700 --- [eventService] [main] c.l.e.EventServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-03-03T13:48:23.347+04:00  INFO 9700 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-03-03T13:48:23.353+04:00  INFO 9700 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-03T13:48:23.755+04:00  INFO 9700 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 381 ms. Found 1 JPA repository interface.
+2026-03-03T13:48:23.792+04:00  INFO 9700 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-03-03T13:48:23.794+04:00  INFO 9700 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-03-03T13:48:23.826+04:00  INFO 9700 --- [eventService] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.ltc.eventservice.repository.EventRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-03-03T13:48:23.827+04:00  INFO 9700 --- [eventService] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2026-03-03T13:48:24.849+04:00  INFO 9700 --- [eventService] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-03-03T13:48:24.874+04:00  INFO 9700 --- [eventService] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-03T13:48:24.875+04:00  INFO 9700 --- [eventService] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-03-03T13:48:25.002+04:00  INFO 9700 --- [eventService] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-03T13:48:25.003+04:00  INFO 9700 --- [eventService] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3758 ms
+2026-03-03T13:48:25.779+04:00  INFO 9700 --- [eventService] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-03T13:48:25.913+04:00  INFO 9700 --- [eventService] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-03T13:48:25.994+04:00  INFO 9700 --- [eventService] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-03T13:48:26.484+04:00  INFO 9700 --- [eventService] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-03T13:48:26.543+04:00  INFO 9700 --- [eventService] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-03T13:48:26.964+04:00  INFO 9700 --- [eventService] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a7db5a
+2026-03-03T13:48:26.969+04:00  INFO 9700 --- [eventService] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-03T13:48:27.069+04:00  WARN 9700 --- [eventService] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-03T13:48:29.246+04:00  INFO 9700 --- [eventService] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-03T13:48:29.494+04:00  INFO 9700 --- [eventService] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-03T13:48:31.633+04:00  WARN 9700 --- [eventService] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-03T13:48:32.083+04:00 DEBUG 9700 --- [eventService] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2026-03-03T13:48:32.329+04:00 DEBUG 9700 --- [eventService] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-03-03T13:48:32.422+04:00 DEBUG 9700 --- [eventService] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-03T13:48:32.509+04:00 DEBUG 9700 --- [eventService] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-03T13:48:33.241+04:00 DEBUG 9700 --- [eventService] [main] o.s.d.r.l.RedisMessageListenerContainer  : Starting RedisMessageListenerContainer...
+2026-03-03T13:48:33.245+04:00 DEBUG 9700 --- [eventService] [main] o.s.d.r.l.RedisMessageListenerContainer  : Postpone listening for Redis messages until actual listeners are added
+2026-03-03T13:48:33.829+04:00  INFO 9700 --- [eventService] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-03-03T13:48:33.961+04:00  INFO 9700 --- [eventService] [main] c.l.e.EventServiceApplication            : Started EventServiceApplication in 14.916 seconds (process running for 27.135)
+2026-03-03T13:49:57.781+04:00  INFO 9700 --- [eventService] [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-03T13:49:57.782+04:00  INFO 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-03T13:49:57.783+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-03-03T13:49:57.783+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-03-03T13:49:57.784+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2026-03-03T13:49:57.786+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6b6cf3c1
+2026-03-03T13:49:57.786+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@34dda1b4
+2026-03-03T13:49:57.787+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-03-03T13:49:57.787+04:00  INFO 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-03-03T13:49:57.800+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2026-03-03T13:49:57.813+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-03T13:49:57.847+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2026-03-03T13:49:57.870+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2026-03-03T13:49:57.872+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-03-03T13:49:57.932+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-03T13:49:58.051+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2026-03-03T13:49:58.055+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-03-03T13:49:58.073+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2026-03-03T13:49:58.075+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8081/swagger-ui/oauth2-re (truncated)...]
+2026-03-03T13:49:58.083+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-03T13:49:58.095+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2026-03-03T13:49:58.096+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-03-03T13:49:58.577+04:00  INFO 9700 --- [eventService] [http-nio-8081-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 465 ms
+2026-03-03T13:49:58.603+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-03-03T13:49:58.604+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2026-03-03T13:49:58.605+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-03T13:50:05.430+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/event/allEvents", parameters={}
+2026-03-03T13:50:05.431+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#getAllEvents()
+2026-03-03T13:50:06.325+04:00  INFO 9700 --- [eventService] [http-nio-8081-exec-10] c.l.e.controller.EventController         : All Events: [EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03-01T21:14:36.630, totalTables=5, totalGuests=50, createdAt=2026-02-26T21:14:36.630)]
+2026-03-03T13:50:06.331+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-03T13:50:06.331+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate= (truncated)...]
+2026-03-03T13:50:06.334+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-03T13:50:18.272+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/event/getEventById/3", parameters={}
+2026-03-03T13:50:18.273+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#getEventById(Long)
+2026-03-03T13:50:18.305+04:00  INFO 9700 --- [eventService] [http-nio-8081-exec-1] c.l.e.controller.EventController         : Event Found: EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03-01T21:14:36.630, totalTables=5, totalGuests=50, createdAt=2026-02-26T21:14:36.630)
+2026-03-03T13:50:18.306+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-03T13:50:18.307+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2 (truncated)...]
+2026-03-03T13:50:18.309+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-03T13:52:59.354+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/event/allEvents", parameters={}
+2026-03-03T13:52:59.355+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.ltc.eventservice.controller.EventController#getAllEvents()
+2026-03-03T13:52:59.365+04:00  INFO 9700 --- [eventService] [http-nio-8081-exec-8] c.l.e.controller.EventController         : All Events: [EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate=2026-03-01T21:14:36.630, totalTables=5, totalGuests=50, createdAt=2026-02-26T21:14:36.630)]
+2026-03-03T13:52:59.367+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2026-03-03T13:52:59.369+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[EventResponseDTO(id=3, name=Rasim&Rasima, venue=Yegane Shadliq Sarayi, address=3-cu MKR, eventDate= (truncated)...]
+2026-03-03T13:52:59.370+04:00 DEBUG 9700 --- [eventService] [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
